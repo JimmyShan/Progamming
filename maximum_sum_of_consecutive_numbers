@@ -1,18 +1,18 @@
 #Written Oct 12,2014
 #given an array of numbers, return the maximum sum of consecutive numbers. 
 
-
-def consum(s):                             # s is the array of numbers
-    n=len(s)
-    maxsum = currentsum = 0
+def max_sum_consecutive_nums(nums):                            
+    # nums is a given array of numbers
+    max_sum = current_sum = 0
     
-    for i in range(n):
-        currentsum = currentsum + s[i]
-        if currentsum > maxsum:
-            maxsum = currentsum
-        if currentsum < 0:
-            currentsum = 0
-            continue
-    return maxsum
+    for num in nums:
+        current_sum = current_sum + num
+        if current_sum > max_sum:
+            max_sum = current_sum
+        if current_sum < 0:
+            current_sum = 0
+    return max_sum
     
-print consum([-1,2,-3,4,-2,3,11,3,-4,2])
+# sample test
+nums = [-1,2,-3,4,-2,3,11,3,-4,2]
+print(max_sum_consecutive_nums(nums))
